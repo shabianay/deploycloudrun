@@ -1,0 +1,12 @@
+runtime: php81
+
+handlers:
+  - url: /assets/style
+    static_dir: style
+
+  - url: /assets/images/(.*\.(gif|png|jpg))
+    static_files: images/\1
+    upload: images/(.*\.(gif|png|jpg))
+
+  - url: /.*
+    script: index.php
